@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Gestionnaire de Liens Favoris",
+  "version": "1.0",
+  "description": "Gérez vos liens favoris dans une extension Chrome.",
+  "permissions": ["storage", "activeTab"],
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "images/Capture d’écran du 2023-09-22 03-26-44.png",
+      "48": "images/Capture d’écran du 2023-09-22 03-26-44.png",
+      "128": "images/Capture d’écran du 2023-09-22 03-26-44.png"
+    }
+  },
+  "icons": {
+    "16": "images/Capture d’écran du 2023-09-22 03-26-44.png",
+    "48": "images/Capture d’écran du 2023-09-22 03-26-44.png",
+    "128": "images/Capture d’écran du 2023-09-22 03-26-44.png"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
